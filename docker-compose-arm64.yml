@@ -1,0 +1,24 @@
+version: '3'
+services:
+  desktop-app:
+    image: desktop-app-1.0.0
+    container_name: desktop-app
+    build:
+      context: .
+    env_file: ./dev.env
+    environment:
+      - DISPLAY=${DISPLAY}
+    restart: unless-stopped
+    command: >
+      bash -c "sh /scripts/ip.sh &&/usr/sbin/sshd -D"
+    ports:
+      - "49989:22"
+    volumes:
+      - ./:/app
+      - ./scripts:/scripts
+      - ./transformers-cache:/transformers-cache
+      - /tmp/.X11-unix:/tmp/.X11-unix
+
+networks:
+  kanbii:
+    external: true

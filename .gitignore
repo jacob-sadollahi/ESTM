@@ -1,0 +1,10 @@
+.idea
+.DS_Store
+*.pyc
+__pycache__
+env
+venv
+*.eml
+*.mo
+/transformers-cache
+.coverage

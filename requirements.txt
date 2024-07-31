@@ -1,0 +1,7 @@
+flake8==7.1.0
+requests==2.32.3
+customtkinter==5.2.2
+pillow==10.4.0
+transformers[torch]==4.42.3
+sentence-transformers==3.0.1
+torch==2.3.1
